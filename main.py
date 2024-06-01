@@ -49,9 +49,8 @@ def get_file_links_from_json(_json):
 
 base_directory = 'data/originaldata'
 json_files_dir = find_json_files(base_directory)
-
-# print(json_files[0])
-
+save_path = 'data/downloads'
+os.makedirs(save_path, exist_ok=True)
 
 list_dfs = []
 for dir in json_files_dir:
@@ -62,10 +61,6 @@ for dir in json_files_dir:
 
 df_files = pd.DataFrame(list_dfs)
 
-
-# 파일 저장 경로 설정
-save_path = 'data/downloads'
-os.makedirs(save_path, exist_ok=True)
 
 # 파일 다운로드 함수
 
